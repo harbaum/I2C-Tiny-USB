@@ -1,0 +1,17 @@
+Source: i2c-tiny-usb-userspace
+Section: user/other
+Priority: extra
+Maintainer: Till Harbaum <Till@Harbaum.org>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: i2c-tiny-usb-userspace
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: User space application for i2c_tiny_usb
+ This simple test application for the i2c-tiny-usb interface bypasses
+ the kernel driver being part of the kernel since 2.6.21. The kernel
+ driver may therefore have to be unloaded before this i2c_usb is being
+ run. This program currently supports the ds1621 temperature sensor
+ and the pcf8574 parallel port. See www.harbaum.org/till/i2c_tiny_usb
+ for details.

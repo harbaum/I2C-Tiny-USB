@@ -1,0 +1,22 @@
+--- linux-2.6.24.3.orig/drivers/i2c/busses/i2c-tiny-usb.c	2008-02-26 01:20:20.000000000 +0100
++++ linux-2.6.24.3/drivers/i2c/busses/i2c-tiny-usb.c	2008-03-30 20:47:46.000000000 +0200
+@@ -131,11 +131,15 @@
+ 
+ /* ----- begin of usb layer ---------------------------------------------- */
+ 
+-/* The usb i2c interface uses a vid/pid pair donated by */
+-/* Future Technology Devices International Ltd. */
++/* 
++ * Initially the usb i2c interface uses a vid/pid pair donated by
++ * Future Technology Devices International Ltd., later a pair was
++ * bought from EZPrototypes 
++ */
+ static struct usb_device_id i2c_tiny_usb_table [] = {
+-	{ USB_DEVICE(0x0403, 0xc631) },
+-	{ }			/* Terminating entry */
++	{ USB_DEVICE(0x0403, 0xc631) },   /* FTDI */
++	{ USB_DEVICE(0x1c40, 0x0534) },   /* EZPrototypes */
++	{ }                               /* Terminating entry */
+ };
+ 
+ MODULE_DEVICE_TABLE(usb, i2c_tiny_usb_table);

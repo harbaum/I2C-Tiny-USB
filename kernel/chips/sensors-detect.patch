@@ -1,0 +1,76 @@
+--- sensors-detect.old	2006-11-20 18:19:14.000000000 +0100
++++ sensors-detect	2006-12-09 13:22:06.000000000 +0100
+@@ -1024,6 +1024,18 @@
+        i2c_detect => sub { adm9240_detect(1, @_); },
+      },
+      {
++       name => "Devantech CMPS03",
++       driver => "cmps03",
++       i2c_addrs => [0x60],
++       i2c_detect => sub { cmps03_detect(@_); },
++     },
++     {
++       name => "Devantech TPA81",
++       driver => "tpa81",
++       i2c_addrs => [0x68],
++       i2c_detect => sub { tpa81_detect(@_); },
++     },
++     {
+        name => "National Semiconductor LM81",
+        driver => "adm9240",
+        i2c_addrs => [0x2c..0x2f],
+@@ -3332,6 +3344,54 @@
+ # $_[0]: A reference to the file descriptor to access this chip.
+ #        We may assume an i2c_set_slave_addr was already done.
+ # $_[1]: Address
++# Returns: undef if not detected, 4 if detected
++# Registers used:
++#   0x00: Firmware version
++#   0x02: Heading High Byte
++#   0x0C: Internal Value
++#   0x0D: Internal Value
++# Detection is weak. May become better if correlation between
++# byte value in register 1 and word value in 2/3 is detected
++sub cmps03_detect
++{
++  my $i;
++  my ($file,$addr) = @_;
++  my $zero0 = i2c_smbus_read_byte_data($file,0x0c);
++  my $zero1 = i2c_smbus_read_byte_data($file,0x0d);
++  return if ($zero0 | $zero1) != 0;
++  my $version = i2c_smbus_read_byte_data($file,0x00);
++  return if (($version < 8) || ($version > 15));
++  my $heading_high = i2c_smbus_read_byte_data($file,0x02);
++  return if (($heading_high < 0)||($heading_high > 0x0e));
++  return 4;
++}
++
++# $_[0]: A reference to the file descriptor to access this chip.
++#        We may assume an i2c_set_slave_addr was already done.
++# $_[1]: Address
++# Returns: undef if not detected, 4 if detected
++# Registers used:
++#   0x00: Firmware version
++#   0x01-0x09: temperatures (4-100 deg celsius)
++sub tpa81_detect
++{
++  my $i;
++  my ($file,$addr) = @_;
++  my $ver = i2c_smbus_read_byte_data($file,0x00);
++  return if ($ver) < 6;
++  return if ($ver) > 8;
++
++  for ($i = 0x01; $i <= 0x09; $i++) {
++    my $tmp = i2c_smbus_read_byte_data($file,$i);
++    return if ($tmp) < 4;
++    return if ($tmp) > 100;
++  }
++  return 4;
++}
++
++# $_[0]: A reference to the file descriptor to access this chip.
++#        We may assume an i2c_set_slave_addr was already done.
++# $_[1]: Address
+ # Returns: undef if not detected, 1 to 3 if detected.
+ # Registers used:
+ #   0x00: Configuration register

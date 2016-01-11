@@ -1,0 +1,15 @@
+#
+# Makefile.xmingw
+#
+
+APP = i2c_usb
+
+all: $(APP).exe
+
+clean:
+	rm -f $(APP).exe
+
+$(APP).exe: $(APP).c
+	$(CC) -Wall -mno-cygwin -DWIN -o $@ $(APP).c -lusb
+
+ 

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=i2c-tiny-usb Demo
+Exec=/usr/bin/i2c_usb
+Terminal=true

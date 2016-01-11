@@ -1,0 +1,19 @@
+#
+# Makefile.xmingw
+#
+
+XMINGW_ROOT = /usr/local/cross-tools/bin
+
+CC = $(XMINGW_ROOT)/i386-mingw32msvc-gcc
+
+APP = i2c_usb
+
+all: $(APP).exe
+
+clean:
+	rm -f $(APP).exe
+
+$(APP).exe: $(APP).c
+	$(CC) -Wall -DWIN -o $@ $(APP).c -lusb
+
+ 

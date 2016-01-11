@@ -1,0 +1,4 @@
+usr/bin
+usr/sbin
+etc/udev/rules.d
+usr/share/applications/hildon
