@@ -61,7 +61,7 @@ Resistor R1 is 2k2 instead of 1k5 for the same reason. It is meant to pullup to 
 Below is the final PCB layout. It consists of the USB and I2C parts only and does not include a I2C client chip. Instead it comes with a solder area for easy prototyping. I do have some of these PCBs left. Just drop me an email if you want to buy one (6 EUR per PCB + 4 EUR shipping). You can easily etch a PCB youself. Since most of the connections are on the bottom side even a single sided PCB will work. You'll just have to add the four missing connections using thin wires.
 
 [![](images/parts_small.gif)](pcb/parts.pdf) | [![](images/top_small.gif)](pcb/pcb_top.pdf) | [![](images/bottom_small.gif)](pcb/pcb_bottom.pdf) | ![](images/pcb.jpg)
--- | -- | -- | --
+---- | ---- | ---- | ----
 **Part placement** | **Top PCB side** | **Bottom PCB side** | **The final PCB**
 
 The USB connector space on the PCB provides two additional holes to allow an USB cable to be directly and firmly attached to the device without the use of the USB connector. See the image below for the desired pinout.
