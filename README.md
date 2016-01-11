@@ -61,30 +61,32 @@ Resistor R1 is 2k2 instead of 1k5 for the same reason. It is meant to pullup to 
 Below is the final PCB layout. It consists of the USB and I2C parts only and does not include a I2C client chip. Instead it comes with a solder area for easy prototyping. I do have some of these PCBs left. Just drop me an email if you want to buy one (6 EUR per PCB + 4 EUR shipping). You can easily etch a PCB youself. Since most of the connections are on the bottom side even a single sided PCB will work. You'll just have to add the four missing connections using thin wires.
 
 [![](images/parts_small.gif)](pcb/parts.pdf)
-Part placement
+**Part placement**
 
 [![](images/top_small.gif)](pcb/pcb_top.pdf)
-Top PCB side
+**Top PCB side**
 
 [![](images/bottom_small.gif)](pcb/pcb_bottom.pdf)
-Bottom PCB side
+**Bottom PCB side**
 
 ![](images/pcb.jpg)
-The final PCB
+**The final PCB**
 
 The USB connector space on the PCB provides two additional holes to allow an USB cable to be directly and firmly attached to the device without the use of the USB connector. See the image below for the desired pinout.
 
 ![](images/cable.gif)
 **Direct cable wiring schema ...**
 
-![](images/cable.jpg) |
+![](images/cable.jpg)
 **... and in reality (with pcf8574 client).**
 
 ### Part list
 
 You can get all parts directly via [my i2c-tiny-usb part list at Reichelt](http://www.reichelt.de/?ACTION=20;AWKID=50364;PROVID=2084). This list includes the following parts:
 
-| Part | Qty | Name | [Reichelt Part No.](http://www.reichelt.de) |
+Part | Qty | Name | [Reichelt Part No.](http://www.reichelt.de)
+---- | ---- | ---- | ----
+
 | D1, D2 | 2 | 3.6V zener diode | ZF 3,6 |
 | Q1 | 1 | 12Mhz crystal, HC49U package | 12,0000-HC49U-S |
 | R1 | 1 | 2.2 kilo ohm resistor | 1/4W 2,2k |
@@ -126,64 +128,13 @@ Solution: The device is working partly and the USB transfers are unreliable. Thi
 
 The i2c_tiny_usb works at various hosts. One of the most interesting ones is the [Nokia N800](http://www.nseries.com). You need to [enable USB host mode capabilities on your N800](http://www.harbaum.org/till/n800_usb) to make use of the i2c-tiny-usb.
 
-<center>![](n800.jpg)</center>
+![](images/n800.jpg)
 
 The demo application (contained in the i2c_tiny_usb archive) can easily be installed on the N800 from the harbaum.org repository using the install button below. Once it's installed it can be run from extras menu. The current version comes with a udev rules file granting user access to the i2c-tiny-usb and thus not requiring root rights anymore. Below is a screenshot of my n800 with a ds1621 equipped i2c-tiny-usb.
 
-<center>[![](screenshot_small.gif)](screenshot.gif)</center>
+[![](images/screenshot_small.gif)](images/screenshot.gif)
 
 The <tt>i2c_usb</tt> demo application currently supports two I2C client chips, a ds1621 temperature sensor and a pcf8574 parallel port driver (with some LEDs attached to it, so you can see what's happening). Further chips can easily be supported, just use the source above ... Happy hacking with the N800!
-
-<center>[![](ac_install_icon.png)](http://maemo.org/downloads/product/raw/OS2008/i2c-tiny-usb/?get_installfile)</center>
-
-## Downloads
-
-*   [Maemo install file for i2c_tiny_usb](http://maemo.org/downloads/product/raw/OS2008/i2c-tiny-usb/?get_installfile)
-*   [Maemo extras repository](http://repository.maemo.org/extras/pool/diablo/free/source/i/i2c-tiny-usb/) containing the i2c_tiny_usb test application
-*   Version 2009-02-10: [i2c_tiny_usb-2009-02-10.zip](i2c_tiny_usb-2009-02-10.zip)
-
-*   Added eagle source files for schematic and board
-
-*   Version 2008-11-27: [i2c_tiny_usb-2008-11-27.zip](i2c_tiny_usb-2008-11-27.zip)
-
-*   Fixed mismatching windows libusb dll's and sys' files (by Alan Page)
-
-*   Version 2007-06-07: [i2c_tiny_usb-2007-06-07.zip](i2c_tiny_usb-2007-06-07.zip)
-
-*   USB version number fix
-
-*   Version 2007-05-20: [i2c_tiny_usb-2007-05-20.zip](i2c_tiny_usb-2007-05-20.zip)
-
-*   Firmware version 1.05(avrusb)/2.05(usbtiny)
-*   All parts GPL compliant
-*   Patch to make usbtiny version work when already plugged in at boot time
-*   Both USB stacks updated to the latest versions
-*   The Linux kernel driver is now maintained as part of the [official Linux kernel](http://www.kernel.org)
-
-*   Version 2007-01-05: [i2c_tiny_usb-2007-01-05.zip](i2c_tiny_usb-2007-01-05.zip)
-
-*   Firmware version 1.04/2.04 (i2c clock bug fix)
-*   Test application includes pcf8574 support
-*   Linux kernel driver for [tpa81 temperature array sensor](http://www.robot-electronics.co.uk/shop/Thermal_Array_Sensors2086.htm)
-
-*   Version 2007-01-03: [i2c_tiny_usb-2007-01-03.zip](i2c_tiny_usb-2007-01-03.zip)
-
-*   Bug fixes in usbtiny version
-*   Added PCB layout
-*   Added Windows libusb driver and ready-to-run test application
-
-*   Version 2006-12-03: [i2c_tiny_usb-2006-12-03.zip](i2c_tiny_usb-2006-12-03.zip)
-
-*   Added support for [usbtiny](http://www.xs4all.nl/~dicks/avr/usbtiny/)
-*   Firmware version 1.03 (avrusb)/2.03 (usbtiny)
-*   Device supports i2c clock expansion
-*   Linux kernel driver for [cmps03 compass module](http://www.robot-electronics.co.uk/shop/Compass_CMPS032004.htm)
-*   Updated testapp
-
-*   Version 2006-11-06: [i2c_tiny_usb-2006-11-06.zip](i2c_tiny_usb-2006-11-06.zip)
-
-*   Firmware version 0.01, the first working version
-*   Kernel driver 0.9
 
 ## Links
 
