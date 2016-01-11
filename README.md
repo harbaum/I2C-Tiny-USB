@@ -74,11 +74,8 @@ Below is the final PCB layout. It consists of the USB and I2C parts only and doe
 
 The USB connector space on the PCB provides two additional holes to allow an USB cable to be directly and firmly attached to the device without the use of the USB connector. See the image below for the desired pinout.
 
-![](images/cable.gif)
-**Direct cable wiring schema ...**
-
-![](images/cable.jpg)
-**... and in reality (with pcf8574 client).**
+![](images/cable.gif) | ![](images/cable.jpg)
+**Direct cable wiring schema ...** | **... and in reality (with pcf8574 client).**
 
 ### Part list
 
@@ -86,19 +83,18 @@ You can get all parts directly via [my i2c-tiny-usb part list at Reichelt](http:
 
 Part | Qty | Name | [Reichelt Part No.](http://www.reichelt.de)
 ---- | ---- | ---- | ----
-
-| D1, D2 | 2 | 3.6V zener diode | ZF 3,6 |
-| Q1 | 1 | 12Mhz crystal, HC49U package | 12,0000-HC49U-S |
-| R1 | 1 | 2.2 kilo ohm resistor | 1/4W 2,2k |
-| R2, R3 | 2 | 68 ohm resistor | 1/4W 68 |
-| R4, R5 | 2 | 10 kilo ohm resistor | 1/4W 10k |
-| C1, C2 | 2 | 22pF ceramic capacitor, 2.54mm | KERKO 22P |
-| C3 | 1 | 100nF capacitor, 5.08mm | X7R-5 100N |
-| C6 | 1 | 10μF electrolytic capacitor | RAD 10/35 |
-| -- | 1 | USB-B print connector | USB BW |
-| JP1 | 1 | 4 pin I2C connector | SL 1X36G 2,54 |
-| U$1 | 1 | Attiny45 DIP 20Mhz | ATTINY 45-20PU |
-| -- | 1 | socket for U$1 | GS 8P |
+D1, D2 | 2 | 3.6V zener diode | ZF 3,6
+Q1 | 1 | 12Mhz crystal, HC49U package | 12,0000-HC49U-S
+R1 | 1 | 2.2 kilo ohm resistor | 1/4W 2,2k
+R2, R3 | 2 | 68 ohm resistor | 1/4W 68
+R4, R5 | 2 | 10 kilo ohm resistor | 1/4W 10k
+C1, C2 | 2 | 22pF ceramic capacitor, 2.54mm | KERKO 22P
+C3 | 1 | 100nF capacitor, 5.08mm | X7R-5 100N
+C6 | 1 | 10μF electrolytic capacitor | RAD 10/35
+-- | 1 | USB-B print connector | USB BW
+JP1 | 1 | 4 pin I2C connector | SL 1X36G 2,54
+U$1 | 1 | Attiny45 DIP 20Mhz | ATTINY 45-20PU
+-- | 1 | socket for U$1 | GS 8P
 
 ## Compiling the firmware
 
