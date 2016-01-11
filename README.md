@@ -15,11 +15,10 @@ The i2c-tiny-usb project is based on:
 
 ## Hardware
 
-![](images/prototype.gif)
-**The prototype board including a ds1621 temperature sensor**
-
-![](images/final.jpg)
-**The final hardware with the same sensor added**
+![](images/prototype.gif) | ![](images/final.jpg)
+---- | ----
+**The prototype board including** | **The final hardware with**
+**a ds1621 temperature sensor** | **the same sensor added**
 
 The hardware of the i2c-tiny-usb interface consists of the [Atmel AVR ATtiny45 CPU](http://www.atmel.com/dyn/products/product_card.asp?part_id=3618), a cheap and easy to obtain microcontroller with 4 KBytes flash (of which ~2k are used in this application) and 256 Bytes RAM. The processor is surrounded by few other parts.
 
@@ -142,4 +141,6 @@ The <tt>i2c_usb</tt> demo application currently supports two I2C client chips, a
 
 * * *
 
-| [Till Harbaum](mailto:till@harbaum.org)-[Impressum](http://www.harbaum.org/till/impressum.html) | http://www.harbaum.org/till |
+[Till Harbaum](mailto:till@harbaum.org)
+
+http://www.harbaum.org/till
