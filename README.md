@@ -15,8 +15,11 @@ The i2c-tiny-usb project is based on:
 
 ## Hardware
 
-| ![](images/prototype.gif) | ![](images/final.jpg) |
-| **The prototype board including a ds1621 temperature sensor** | **The final hardware with the same sensor added** |
+![](images/prototype.gif)
+**The prototype board including a ds1621 temperature sensor**
+
+![](images/final.jpg)
+**The final hardware with the same sensor added**
 
 The hardware of the i2c-tiny-usb interface consists of the [Atmel AVR ATtiny45 CPU](http://www.atmel.com/dyn/products/product_card.asp?part_id=3618), a cheap and easy to obtain microcontroller with 4 KBytes flash (of which ~2k are used in this application) and 256 Bytes RAM. The processor is surrounded by few other parts.
 
@@ -49,7 +52,7 @@ temp:     +21.50°C (low  = +15.0°C, high = +10.0°C)  ALARM (HIGH)
 
 ### Schematics and PCB
 
-<center>[![](schematic_small.gif)](schematic.gif)</center>
+[![](images/schematic_small.gif)](pcb/schematic.pdf)
 
 The zener diodes in the schematic are optional. They may be required since the i2c-tiny-usb is directly powered from the USBs VBUS singnal at 5V. The USB data lines (D+ and D-) are supposed to be operated at 3.3V only. Some PCs encounter problems at 5V and limiting the voltage to at most 3.6V may help. My prototype lacks these diodes since my PC works fine with D+ and D- at 5V.
 
@@ -57,13 +60,25 @@ Resistor R1 is 2k2 instead of 1k5 for the same reason. It is meant to pullup to 
 
 Below is the final PCB layout. It consists of the USB and I2C parts only and does not include a I2C client chip. Instead it comes with a solder area for easy prototyping. I do have some of these PCBs left. Just drop me an email if you want to buy one (6 EUR per PCB + 4 EUR shipping). You can easily etch a PCB youself. Since most of the connections are on the bottom side even a single sided PCB will work. You'll just have to add the four missing connections using thin wires.
 
-| [![](parts_small.gif)](parts.gif) | [![](top_small.gif)](top.gif) | [![](bottom_small.gif)](bottom.gif) | ![](pcb.jpg) |
-| Part placement | Top (click for 600 dpi) | Bottom (click for 600 dpi) | The final PCB |
+[![](images/parts_small.gif)](pcb/parts.pdf)
+Part placement
+
+[![](images/top_small.gif)](pcb/pcb_top.pdf)
+Top PCB side
+
+[![](images/bottom_small.gif)](pcb/pcb_bottom.pdf)
+Bottom PCB side
+
+![](images/pcb.jpg)
+The final PCB
 
 The USB connector space on the PCB provides two additional holes to allow an USB cable to be directly and firmly attached to the device without the use of the USB connector. See the image below for the desired pinout.
 
-| ![](cable.gif) | ![](cable.jpg) |
-| **Direct cable wiring schema ...** | **... and in reality (with pcf8574 client).** |
+![](images/cable.gif)
+**Direct cable wiring schema ...**
+
+![](images/cable.jpg) |
+**... and in reality (with pcf8574 client).**
 
 ### Part list
 
