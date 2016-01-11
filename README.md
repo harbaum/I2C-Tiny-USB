@@ -74,8 +74,9 @@ Below is the final PCB layout. It consists of the USB and I2C parts only and doe
 
 The USB connector space on the PCB provides two additional holes to allow an USB cable to be directly and firmly attached to the device without the use of the USB connector. See the image below for the desired pinout.
 
-![](images/cable.gif) | ![](images/cable.jpg)
 **Direct cable wiring schema ...** | **... and in reality (with pcf8574 client).**
+---- | ----
+![](images/cable.gif) | ![](images/cable.jpg)
 
 ### Part list
 
