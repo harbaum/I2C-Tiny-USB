@@ -157,8 +157,8 @@ extern void usbEventResetReady(void);
  */
 #define USB_CFG_DEVICE_VERSION  0x01, 0x02
 
-#define USB_CFG_VENDOR_NAME 'h', 'a', 'r', 'b', 'a', 'u', 'm', '.', 'o', 'r', 'g'
-#define USB_CFG_VENDOR_NAME_LEN 11
+#define USB_CFG_VENDOR_NAME 'T','i','l','l',' ','H','a','r','b','a','u','m'
+#define USB_CFG_VENDOR_NAME_LEN 12
 
 /* These two values define the vendor name returned by the USB device. The name
  * must be given as a list of characters under single quotes. The characters
