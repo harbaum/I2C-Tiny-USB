@@ -602,6 +602,21 @@ void usbEventResetReady(void)
 {
     calibrateOscillator();
     eeprom_write_byte(0, OSCCAL);   /* store the calibrated value in EEPROM */
+
+    // the timer has run for a while and we can store a new serial number
+    // in eeprom
+    if(TCCR1 & (1<<CS10))
+    {
+      uint16_t val = TCNT1;
+      eeprom_write_byte((EE_addr+0), '0' + (val/1000) % 10);
+      eeprom_write_byte((EE_addr+1), '0' + (val/100) % 10);
+      eeprom_write_byte((EE_addr+2), '0' + (val/10) % 10);
+      eeprom_write_byte((EE_addr+3), '0' + (val/1) % 10);
+      usbDescriptorStringSerialNumber[1] = eeprom_read_byte(EE_addr+0);
+      usbDescriptorStringSerialNumber[2] = eeprom_read_byte(EE_addr+1);
+      usbDescriptorStringSerialNumber[3] = eeprom_read_byte(EE_addr+2);
+      usbDescriptorStringSerialNumber[4] = eeprom_read_byte(EE_addr+3);
+    }
 }
 
 
@@ -659,6 +674,7 @@ static inline void initSerialNumber()
     char val1 = eeprom_read_byte(EE_addr+0);
     char val2 = eeprom_read_byte(EE_addr+1);
     char val3 = eeprom_read_byte(EE_addr+2);
+    char val4 = eeprom_read_byte(EE_addr+3);
 
     // ascii 48 -> '0' , 57 -> '9'
 
@@ -674,16 +690,18 @@ static inline void initSerialNumber()
     {
     	eepromProblem = 1;
     }
-
-    /* default serial number ... */
+    else if((val4 < 48) || (val4 > 57))
+    {
+    	eepromProblem = 1;
+    }
+    /* start timer to force creation of a new random serial number ... */
     if(eepromProblem)
     {
-    	eeprom_write_byte((EE_addr+0),'1');
-    	eeprom_write_byte((EE_addr+1),'1');
-    	eeprom_write_byte((EE_addr+2),'3');
+      TCCR1 = (1<<CS10);  // run timer at full cpu speed
     }
-
+    
 	usbDescriptorStringSerialNumber[1] = eeprom_read_byte(EE_addr+0);
 	usbDescriptorStringSerialNumber[2] = eeprom_read_byte(EE_addr+1);
 	usbDescriptorStringSerialNumber[3] = eeprom_read_byte(EE_addr+2);
+	usbDescriptorStringSerialNumber[4] = eeprom_read_byte(EE_addr+3);
 }
