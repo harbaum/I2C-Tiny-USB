@@ -7,6 +7,8 @@ available [here](https://github.com/nopdotcom/i2c_tiny_usb-on-Little-Wire).
 I reverted the changes of the USB ID to make this compatible again
 with the original i2c-tiny-usb driver.
 
+![Foto](digispark_rc522.jpg)
+
 ## Pin mapping
 
 ```SDA``` is mapped to pin P0 of the digispark. ```SCL``` is mapped to P2.
