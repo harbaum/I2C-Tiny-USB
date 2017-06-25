@@ -9,6 +9,8 @@ with the original i2c-tiny-usb driver.
 
 ![Foto](digispark_rc522.jpg)
 
+Foto: rc522 i2c rfid reader connected to the digispark. 
+
 ## Pin mapping
 
 ```SDA``` is mapped to pin P0 of the digispark. ```SCL``` is mapped to P2.
