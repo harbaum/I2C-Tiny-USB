@@ -1,5 +1,9 @@
 # i2c-tiny-usb
 
+No custom hardware is needed anymore since the i2c-tiny-usb firmware has been [ported to the digispark](https://github.com/harbaum/I2C-Tiny-USB/tree/master/digispark).
+
+## Introduction
+
 Attach any I2C client chip (thermo sensors, AD converter, displays, relais driver, ...) to your PC via USB ... quick, easy and cheap! Drivers for Linux, Windows and MacOS available.
 
 The i2c-tiny-usb project is an open source/open hardware project. The goal of i2c-tiny-usb is to provide a cheap generic i2c interface to be attached to the usb. It is meant as a replacement for those simple and cheap printer port to i2c adapters. A USB solution has several advantages incl. the built-in power supply and a more future proof interface. Furthermore no cpu intense bitbanging is required on the host side. This USB solution even requires less parts than some printer port solutions.
