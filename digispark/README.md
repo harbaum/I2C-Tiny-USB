@@ -9,6 +9,10 @@ driver and e.g. works with the linux kernel driver. This page only
 describes the digispark port. Further information about the i2c-tiny-usb
 can be found in the [main github repository](https://github.com/harbaum/I2C-Tiny-USB).
 
+![Foto](digispark_rc522.jpg)
+
+Foto: rc522 i2c rfid reader connected to the digispark. 
+
 ## Pin mapping
 
 ```SDA``` is mapped to pin ```P0``` of the digispark. ```SCL``` is mapped to ```P2```.
