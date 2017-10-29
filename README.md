@@ -140,7 +140,7 @@ The <tt>i2c_usb</tt> demo application currently supports two I2C client chips, a
 ## User contributions
 
 *   [BLIT2008 board being used via the i2c-tiny-usb firmware](http://bralug.de/wiki/BLIT2008-Board_mit_i2c-tiny-usb-Firmware)
-*   [Henning Pauls i2c-tiny-usb](http://home.arcor.de/henning.paul/gallery/avr/)
+*   [Henning Pauls i2c-tiny-usb](https://web.archive.org/web/20161015190723/http://home.arcor.de/henning.paul/gallery/avr/)
 *   [Barry Carters feature extended version](http://www.headfuzz.co.uk/?q=USBtoI2C)
 
 * * *
