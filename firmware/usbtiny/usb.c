@@ -78,7 +78,7 @@ static	byte_t*	usb_tx_data;		// pointer to data to transmit
 static	byte_t	new_address;		// new device address
 
 #if	defined USBTINY_VENDOR_NAME
-struct
+const struct
 {
 	byte_t	length;
 	byte_t	type;
@@ -95,7 +95,7 @@ struct
 #endif
 
 #if	defined USBTINY_DEVICE_NAME
-struct
+const struct
 {
 	byte_t	length;
 	byte_t	type;
@@ -112,7 +112,7 @@ struct
 #endif
 
 #if	defined USBTINY_SERIAL
-struct
+const struct
 {
 	byte_t	length;
 	byte_t	type;
@@ -129,7 +129,7 @@ struct
 #endif
 
 #if	VENDOR_NAME_ID || DEVICE_NAME_ID || SERIAL_ID
-static	byte_t	string_langid [] PROGMEM =
+const static	byte_t	string_langid [] PROGMEM =
 {
 	4,				// bLength
 	DESCRIPTOR_TYPE_STRING,		// bDescriptorType (string)
@@ -138,7 +138,7 @@ static	byte_t	string_langid [] PROGMEM =
 #endif
 
 // Device Descriptor
-static	byte_t	descr_device [18] PROGMEM =
+const static	byte_t	descr_device [18] PROGMEM =
 {
 	18,				// bLength
 	DESCRIPTOR_TYPE_DEVICE,		// bDescriptorType
@@ -157,7 +157,7 @@ static	byte_t	descr_device [18] PROGMEM =
 };
 
 // Configuration Descriptor
-static	byte_t	descr_config [] PROGMEM =
+const static	byte_t	descr_config [] PROGMEM =
 {
 	9,				// bLength
 	DESCRIPTOR_TYPE_CONFIGURATION,	// bDescriptorType
