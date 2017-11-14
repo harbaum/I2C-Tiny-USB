@@ -15,6 +15,8 @@ Foto: rc522 i2c rfid reader connected to the digispark.
 
 ## Pin mapping
 
+![Pinout](digispark_pins.svg)
+
 ```SDA``` is mapped to pin ```P0``` of the digispark. ```SCL``` is mapped to ```P2```.
 
 ### I2C pullup resistors
