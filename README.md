@@ -1,6 +1,6 @@
 # i2c-tiny-usb
 
-No custom hardware is needed anymore since the i2c-tiny-usb firmware has been [ported to the digispark](https://github.com/harbaum/I2C-Tiny-USB/tree/master/digispark).
+No custom hardware is needed anymore since the i2c-tiny-usb firmware has been ported to the digispark and the Adafruit Trinket. See the [instructions](https://github.com/harbaum/I2C-Tiny-USB/tree/master/digispark).
 
 ## Introduction
 
