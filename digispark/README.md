@@ -1,7 +1,10 @@
-# I2C-Tiny-USB on Digispark
+# I2C-Tiny-USB on Digispark and Adafruit Trinket
 
 The i2c-tiny-usb firmware has been ported to the
-[digispark](http://digistump.com/products/1). The original port is
+[digispark](http://digistump.com/products/1) and the
+[Adafruit Trinket](https://www.adafruit.com/product/1501).
+It currently only works on the 5V Trinket because the 3.3V version does not
+officially support operation at 16MHz. The original port is
 available [here](https://github.com/nopdotcom/i2c_tiny_usb-on-Little-Wire).
 
 The version distributed here is compatible with the original i2c-tiny-usb
@@ -18,6 +21,7 @@ Foto: rc522 i2c rfid reader connected to the digispark.
 ![Pinout](digispark_pins.svg)
 
 ```SDA``` is mapped to pin ```P0``` of the digispark. ```SCL``` is mapped to ```P2```.
+```SDA``` is mapped to pin ```#0``` of the Adafruid Trinket. ```SCL``` is mapped to ```#2```.
 
 ### I2C pullup resistors
 
@@ -42,6 +46,9 @@ timeout and you'll see e.g. the following message in the linux syslog:
 [...] i2c i2c-4: failure writing data
 ```
 
+In this case the watchdog will trigger and you can see the Adafruit Trinket to
+enter the bootloader again.
+
 ## Flashing the firmware
 
 A compiled binary named ```main.hex``` is available in the repository.
@@ -51,6 +58,12 @@ from the digispark arduino installation:
 
 ```
 micronucleus --run --dump-progress --type intel-hex main.hex
+```
+
+or the Adafruit Trinket using (make sure to apply their config tweeks first):
+
+```
+avrdude -pattiny85 -cusbtiny -D -Uflash:w:main.hex
 ```
 
 More details on this can be found [here](https://github.com/nopdotcom/i2c_tiny_usb-on-Little-Wire/wiki/BuildingOnLinux).
