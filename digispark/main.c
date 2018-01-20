@@ -66,6 +66,7 @@
 #include <avr/eeprom.h>
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
+#include <avr/power.h>
 #include <util/delay_basic.h>
 #include <util/delay.h>
 #include <util/atomic.h>
@@ -628,6 +629,8 @@ static inline void initSerialNumber();
 int main(void) {
 	uchar   i;
 	uchar   calibrationValue;
+
+    clock_prescale_set(clock_div_1);
 	
     calibrationValue = eeprom_read_byte(0); /* calibration value from last time */
     if(calibrationValue != 0xff){
