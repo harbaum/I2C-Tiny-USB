@@ -16,6 +16,13 @@ UISP = uisp -dprog=stk200
 
 DEFINES += -DDEBUG
 DEFINES += -DDEBUG_LEVEL=1
+
+# temporary workaround for the ´error: attempt to use poisoned "SIG_INTERRUPT0"´
+DEFINES += -D__AVR_LIBC_DEPRECATED_ENABLE__=1
+
+# need to define for <util/delay.h>
+DEFINES += -DF_CPU=12000000UL
+
 COMPILE = avr-gcc -Wall -O2 -Iusbdrv -I. -mmcu=atmega8 $(DEFINES)
 
 OBJECTS = usbdrv/usbdrv.o usbdrv/usbdrvasm.o usbdrv/oddebug.o main.o
