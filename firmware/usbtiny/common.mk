@@ -34,7 +34,7 @@ main.hex:
 all:		main.hex $(SCHEM)
 
 clean:
-	rm -f main.elf *.o tags *.sch~ gschem.log
+	rm -f main.hex main.elf *.o tags *.sch~ gschem.log
 
 clobber:	clean
 	rm -f main.hex $(SCHEM)

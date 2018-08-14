@@ -52,7 +52,7 @@ all:	firmware.hex
 #        +-------------------- CKDIV8 (divide clock by eight disabled)
 
 clean:
-	rm -f firmware.lst firmware.obj firmware.cof firmware.list firmware.map *.bin *.o */*.o *~ */*~ firmware.s usbdrv/oddebug.s usbdrv/usbdrv.s 
+	rm -f firmware.hex firmware.lst firmware.obj firmware.cof firmware.list firmware.map *.bin *.o */*.o *~ */*~ firmware.s usbdrv/oddebug.s usbdrv/usbdrv.s 
 
 # file targets:
 firmware.bin:	$(OBJECTS)
