@@ -10,6 +10,10 @@
 # DEFINES += -DDEBUG
 # DEFINES += -DDEBUG_LEVEL=1
 DEFINES += -DF_CPU=12000000
+
+# temporary workaround for the ´error: attempt to use poisoned "SIG_INTERRUPT0"´
+DEFINES += -D__AVR_LIBC_DEPRECATED_ENABLE__=1
+
 COMPILE = avr-gcc -Wall -O2 -Iusbdrv -I. -mmcu=attiny45 $(DEFINES)
 
 OBJECTS = usbdrv/usbdrv.o usbdrv/usbdrvasm.o usbdrv/oddebug.o main.o
@@ -48,7 +52,7 @@ all:	firmware.hex
 #        +-------------------- CKDIV8 (divide clock by eight disabled)
 
 clean:
-	rm -f firmware.lst firmware.obj firmware.cof firmware.list firmware.map *.bin *.o */*.o *~ */*~ firmware.s usbdrv/oddebug.s usbdrv/usbdrv.s 
+	rm -f firmware.hex firmware.lst firmware.obj firmware.cof firmware.list firmware.map *.bin *.o */*.o *~ */*~ firmware.s usbdrv/oddebug.s usbdrv/usbdrv.s 
 
 # file targets:
 firmware.bin:	$(OBJECTS)

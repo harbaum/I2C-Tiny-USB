@@ -20,6 +20,10 @@
 
 CC	= avr-gcc
 CFLAGS	= -Os -g -Wall -I. -I$(USBTINY)
+
+# temporary workaround for the ´error: attempt to use poisoned "SIG_INTERRUPT0"´
+CFLAGS += -D__AVR_LIBC_DEPRECATED_ENABLE__=1
+
 ASFLAGS	= -Os -g -Wall -I.
 LDFLAGS	= -g
 MODULES = crc.o int.o usb.o $(OBJECTS)
@@ -30,7 +34,7 @@ main.hex:
 all:		main.hex $(SCHEM)
 
 clean:
-	rm -f main.elf *.o tags *.sch~ gschem.log
+	rm -f main.hex main.elf *.o tags *.sch~ gschem.log
 
 clobber:	clean
 	rm -f main.hex $(SCHEM)
