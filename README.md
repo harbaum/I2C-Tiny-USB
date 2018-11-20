@@ -112,7 +112,7 @@ Problem: The device is not properly detected. Linux reports an error like "devic
 
 Solution: The USB interface is not working at all. Please make sure that the AVR CPU is correctly flashed **and** that the fuses are set correctly. Another reason may be that the zener diodes are too slow (see next problem).
 
-Problem: The device is not properly detected. Linux reports an an error like "device descriptor read/all, error -71" in the system log.
+Problem: The device is not properly detected. Linux reports an error like "device descriptor read/all, error -71" in the system log.
 
 Solution: The device is working partly and the USB transfers are unreliable. This is often cauesed by "slow" high current zener diodes. On a previous reichelt list i had those wrong zener types. These slow diodes often seem to have thicker wires than the other parts. You can just try to remove the zener diodes and the device will work if your host PC copes with 5V on the USB data lines. Also using a USB hub between a device without zener diodes and the PC may lead to a working setup. Otherwise you need faster diodes as a replacement (reichelt no "zf 3,6" as on the current reichelt list).
 
