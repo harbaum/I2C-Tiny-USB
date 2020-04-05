@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name i2c-tiny-usb)(type KiCad)(uri ${KIPRJMOD}/i2c-tiny-usb.pretty)(options "")(descr "Archived footprints for i2c-tiny-usb"))
+)
