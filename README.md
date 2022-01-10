@@ -1,6 +1,9 @@
 # i2c-tiny-usb
 
-No custom hardware is needed anymore since the i2c-tiny-usb firmware has been ported to the digispark and the Adafruit Trinket. See the [instructions](https://github.com/harbaum/I2C-Tiny-USB/tree/master/digispark).
+## Update 2022-01-10
+
+The common firmware(-directory) now is also capable to compile firmwares for different [tinyusbboard](http://matrixstorm.com/avr/tinyusbboard/) (16MHz/20MHz, atmega8, atmega88p, atmega168p, atmega328p) types.
+
 
 ## Introduction
 
