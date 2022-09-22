@@ -3,6 +3,7 @@
 ## Update 2022-01-10
 
 The common firmware(-directory) now is also capable to compile firmwares for different [tinyusbboard](http://matrixstorm.com/avr/tinyusbboard/) (16MHz/20MHz, atmega8, atmega88p, atmega168p, atmega328p) types.
+[Adafruit Pro Trinket - 5V 16MHz](https://www.adafruit.com/product/2000)
 
 
 ## Introduction
@@ -98,6 +99,10 @@ U$1 | 1 | Attiny45 DIP 20Mhz | ATTINY 45-20PU
 ## Compiling the firmware
 
 The ATtiny45 is quite new and thus not all parts of the developement chain support this chip in their current release versions. The latest binutils (linker an assembler) and avrdude (programmer) support the new chips as well but gcc doesn't. The gcc-4.1.0 has to be patched to support some AVR cpus incl. the attiny45\. Get the latest avr device patches (patch-newdevices) e.g [here](http://www.freebsd.org/cgi/cvsweb.cgi/ports/devel/avr-gcc/files/).
+- Clone this repo:
+  +git clone https://github.com/karu2003/I2C-Tiny-USB
+- Fetch the libraries:
+  +cd I2C-Tiny-USB; git submodule update --init --recursive+
 
 ## Uploading the firmware
 

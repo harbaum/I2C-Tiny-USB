@@ -29,13 +29,14 @@ Makefile-avrusb.tiny45            - build with avrusb for Attiny45
 Makefile-avrusb.mega8             - build with avrusb for Atmega8
 Makefile-usbtiny.tiny45           - build with usbtiny for Attiny45
 Makefile-usbtiny.mega8            - build with usbtiny for Atmega8
-Makefile-tinyusbboard20M.mega328p - build with usbtiny on 20MHz tinyusbboard with atmega328p
-Makefile-tinyusbboard.mega328p    - build with usbtiny on 16MHz tinyusbboard with atmega328p
-Makefile-tinyusbboard20M.mega168p - build with usbtiny on 20MHz tinyusbboard with atmega168p
-Makefile-tinyusbboard.mega168p    - build with usbtiny on 16MHz tinyusbboard with atmega168p
-Makefile-tinyusbboard20M.mega88p  - build with usbtiny on 20MHz tinyusbboard with atmega88p
+Makefile-tinyusbboard20M.mega328p - build with usbasp on 20MHz tinyusbboard with atmega328p
+Makefile-tinyusbboard.mega328p    - build with usbasp on 16MHz tinyusbboard with atmega328p
+Makefile-tinyusbboard20M.mega168p - build with usbasp on 20MHz tinyusbboard with atmega168p
+Makefile-tinyusbboard.mega168p    - build with usbasp on 16MHz tinyusbboard with atmega168p
+Makefile-tinyusbboard20M.mega88p  - build with usbasp on 20MHz tinyusbboard with atmega88p
 Makefile-tinyusbboard.mega88p     - build with usbtiny on 16MHz tinyusbboard with atmega88p
 Makefile-tinyusbboard.mega8       - build with usbtiny on classical 16MHz tinyusbboard
+Makefile-AdafruitProTrinket       - build with USBtiny on Adafruit Pro Trinket - 5V 16MHz
 
 Just type 
  make -f Makefile-avrusb.xxx program
@@ -43,6 +44,8 @@ or
  make -f Makefile-usbtiny.xxx flash
 or
  make -f Makefile-tinyusbboard.xxx program
+or
+ make -f Makefile-AdafruitProTrinket program 
 
 
 to compile and upload the file. Please adjust e.g. programmer
