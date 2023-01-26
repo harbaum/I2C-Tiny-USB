@@ -97,7 +97,28 @@ U$1 | 1 | Attiny45 DIP 20Mhz | ATTINY 45-20PU
 
 ## Compiling the firmware
 
-The ATtiny45 is quite new and thus not all parts of the developement chain support this chip in their current release versions. The latest binutils (linker an assembler) and avrdude (programmer) support the new chips as well but gcc doesn't. The gcc-4.1.0 has to be patched to support some AVR cpus incl. the attiny45\. Get the latest avr device patches (patch-newdevices) e.g [here](http://www.freebsd.org/cgi/cvsweb.cgi/ports/devel/avr-gcc/files/).
+You need the AVR version of the GCC compiler to compile the firmware. Under Ubuntu
+you can install these with the following command:
+
+```sudo apt-get install avr-libc binutils-avr gcc-avr avrdude make```
+
+Afterwards you need to clone this repository and update the dependencies:
+
+```
+$ git clone https://github.com/harbaum/I2C-Tiny-USB
+$ cd I2C-Tiny-USB; git submodule update --init --recursive
+```
+
+Finally change into the [firmware directory](firmware) and trigger a
+build of the version you need. E.g. for the version running on the
+ATTiny45:
+
+```
+$ cd firmware
+$ make -f Makefile-avrusb.tiny45
+```
+
+This will result in the firmware stored the file ```firmware.hex```.
 
 ## Uploading the firmware
 
