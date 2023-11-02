@@ -156,6 +156,7 @@ The <tt>i2c_usb</tt> demo application currently supports two I2C client chips, a
 
 *   [AVR-USB, software USB for the AVR platform](http://www.obdev.at/products/avrusb/index.html)
 *   [USBtiny, another software usb implementation for the AVR](http://www.xs4all.nl/~dicks/avr/usbtiny/)
+*   [i2c-star, a firmware implementation for the STM32F103, aka "Blue Pill"](https://github.com/daniel-thompson/i2c-star)
 *   [USB user space library libusb](http://libusb.sourceforge.net/)
 *   [Win32 port of libusb](http://libusb-win32.sourceforge.net/)
 *   [The Linux USB Project](http://www.linux-usb.org/)
